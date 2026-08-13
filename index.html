@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AGRO / HANDS & HEAD — Fertile Soil. Autonomous Architecture.</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#0a0a0a;
+    --soil:#131210;
+    --paper:#efe9dd;
+    --hazard:#e31b23;
+    --acid:#c8ff2e;
+    --grey:#77746c;
+  }
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--void);
+    color:var(--paper);
+    font-family:'Inter',sans-serif;
+  }
+  .font-display{font-family:'Archivo Black',sans-serif;}
+  .font-mono{font-family:'JetBrains Mono',monospace;}
+
+  /* film grain */
+  .grain{position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.05;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .band{background:var(--hazard);}
+  .hairline{border-color:#2a2824;}
+
+  .growth-ring{
+    aspect-ratio:1/1;
+    border-radius:50%;
+    position:relative;
+  }
+  .ring-line{
+    position:absolute;inset:0;border-radius:50%;
+    border:1px solid #2a2824;
+  }
+
+  ::selection{background:var(--hazard);color:var(--void);}
+
+  a:focus-visible, button:focus-visible, input:focus-visible{
+    outline:2px solid var(--acid);
+    outline-offset:3px;
+  }
+
+  @keyframes rotate-slow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+  .rotate-slow{animation:rotate-slow 60s linear infinite;}
+
+  @media (prefers-reduced-motion: reduce){
+    .rotate-slow{animation:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  .stat-row{border-bottom:1px solid #2a2824;}
+  .stat-row:last-child{border-bottom:none;}
+</style>
+</head>
+<body class="antialiased">
+<div class="grain"></div>
+
+<!-- NAV -->
+<header class="fixed top-0 inset-x-0 z-40 border-b hairline bg-[var(--void)]/90 backdrop-blur">
+  <div class="max-w-[1600px] mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
+    <div class="font-mono text-sm tracking-widest uppercase">
+      HANDS&nbsp;&amp;&nbsp;HEAD <span class="text-[var(--hazard)]">/</span> AGRO
+    </div>
+    <nav class="hidden md:flex items-center gap-8 font-mono text-xs tracking-widest uppercase text-[var(--grey)]">
+      <a href="#philosophy" class="hover:text-[var(--paper)] transition-colors">Philosophy</a>
+      <a href="#asset" class="hover:text-[var(--paper)] transition-colors">The Asset</a>
+      <a href="#architecture" class="hover:text-[var(--paper)] transition-colors">Architecture</a>
+      <a href="#waitlist" class="text-[var(--paper)] border border-[var(--paper)] px-4 py-2 hover:bg-[var(--paper)] hover:text-[var(--void)] transition-colors">Reserve Allocation</a>
+    </nav>
+    <a href="#waitlist" class="md:hidden font-mono text-xs tracking-widest uppercase border border-[var(--paper)] px-3 py-2">Reserve</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative min-h-screen flex items-center pt-16 overflow-hidden border-b hairline">
+  <div class="absolute -right-40 -top-20 md:-right-24 md:top-1/2 md:-translate-y-1/2 w-[500px] md:w-[720px] opacity-[0.18] md:opacity-30 pointer-events-none">
+    <div class="growth-ring rotate-slow">
+      <div class="ring-line" style="inset:0%"></div>
+      <div class="ring-line" style="inset:12%"></div>
+      <div class="ring-line" style="inset:24%"></div>
+      <div class="ring-line" style="inset:36%"></div>
+      <div class="ring-line" style="inset:48%; border-color:var(--hazard);"></div>
+    </div>
+  </div>
+
+  <div class="relative max-w-[1600px] mx-auto px-6 md:px-10 w-full py-24">
+    <div class="font-mono text-xs tracking-[0.3em] uppercase text-[var(--hazard)] mb-6">
+      Est. Dhaka — Coordinates Withheld
+    </div>
+    <h1 class="font-display uppercase leading-[0.92] text-[13vw] md:text-[7.5vw] tracking-tight">
+      Fertile Soil.<br>
+      <span class="text-[var(--hazard)]">Autonomous</span><br>
+      Architecture.
+    </h1>
+    <p class="font-mono text-sm md:text-base text-[var(--grey)] max-w-xl mt-8 leading-relaxed">
+      AGRO is the physical-asset extension of HANDS &amp; HEAD — a scarcity-engineered
+      cultivation of premium 600–900g avocados, grown in Bangladesh's most fertile
+      belts and distributed through a zero-friction, middleman-free digital pipeline.
+      This is not a farm website. It is compounding land value, instrumented.
+    </p>
+    <div class="flex flex-wrap items-center gap-4 mt-10">
+      <a href="#waitlist" class="bg-[var(--hazard)] text-[var(--void)] font-mono text-sm uppercase tracking-widest px-8 py-4 font-bold hover:bg-[var(--paper)] transition-colors">
+        Secure Your Allocation
+      </a>
+      <a href="#philosophy" class="font-mono text-sm uppercase tracking-widest px-8 py-4 border border-[var(--grey)] text-[var(--grey)] hover:border-[var(--paper)] hover:text-[var(--paper)] transition-colors">
+        Read the Doctrine
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE STRIP -->
+<div class="band py-3 overflow-hidden border-b hairline">
+  <div class="font-mono text-xs md:text-sm uppercase tracking-widest text-[var(--void)] font-bold whitespace-nowrap">
+    &nbsp;600–900G YIELD CLASS &nbsp;&nbsp;•&nbsp;&nbsp; SCARCITY BY DESIGN &nbsp;&nbsp;•&nbsp;&nbsp;
+    ZERO MIDDLEMEN &nbsp;&nbsp;•&nbsp;&nbsp; 4–5 YEAR MATURATION &nbsp;&nbsp;•&nbsp;&nbsp;
+    AUTONOMOUS PIPELINE &nbsp;&nbsp;•&nbsp;&nbsp; BANGLADESH SOIL, GLOBAL DEMAND &nbsp;&nbsp;•&nbsp;&nbsp;
+    600–900G YIELD CLASS &nbsp;&nbsp;•&nbsp;&nbsp; SCARCITY BY DESIGN &nbsp;&nbsp;•&nbsp;&nbsp;
+    ZERO MIDDLEMEN &nbsp;&nbsp;•&nbsp;&nbsp; 4–5 YEAR MATURATION &nbsp;&nbsp;•&nbsp;&nbsp;
+    AUTONOMOUS PIPELINE &nbsp;&nbsp;•&nbsp;&nbsp; BANGLADESH SOIL, GLOBAL DEMAND &nbsp;
+  </div>
+</div>
+
+<!-- PHILOSOPHY -->
+<section id="philosophy" class="relative border-b hairline">
+  <div class="max-w-[1600px] mx-auto px-6 md:px-10 py-24 md:py-32">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-6">
+      <div class="md:col-span-4">
+        <div class="font-mono text-xs tracking-[0.3em] uppercase text-[var(--hazard)] mb-4">01 — Doctrine</div>
+        <h2 class="font-display uppercase text-4xl md:text-5xl leading-[0.95]">
+          The Synchronicity of Tech &amp; Soil
+        </h2>
+      </div>
+      <div class="md:col-span-7 md:col-start-6 space-y-6 text-[15px] md:text-base leading-relaxed text-[var(--paper)]/90">
+        <p>
+          Most digital commerce is built on hype half-lives — a product trends,
+          converts, and depreciates inside a single quarter. HANDS &amp; HEAD spent
+          years inside that cycle. AGRO is the deliberate exit from it.
+        </p>
+        <p>
+          An avocado tree does not care about your ad spend. It takes four to five
+          years to reach yield maturity, and it does not skip a season because
+          the algorithm changed. That is the point. We are not optimizing for a
+          traffic spike — we are compounding a physical asset that gets more
+          valuable, more scarce, and more defensible every year it's in the ground.
+        </p>
+        <p>
+          What technology contributes is not hype — it's <span class="text-[var(--paper)] font-medium">removal of friction</span>.
+          Automated pipelines (Make.com orchestration, Liquid-driven storefront logic,
+          edge-delivered inventory state) collapse the distance between harvest and
+          buyer to near zero. No brokers. No spoilage sitting in a middleman's
+          warehouse. No CMS team. Just soil, root systems, and code doing exactly
+          the parts humans shouldn't have to.
+        </p>
+        <p class="font-mono text-sm text-[var(--grey)] pt-2 border-t hairline mt-8">
+          The soil compounds slowly. The infrastructure compounds instantly.
+          AGRO exists at the intersection of both timescales.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE ASSET -->
+<section id="asset" class="relative border-b hairline bg-[var(--soil)]">
+  <div class="max-w-[1600px] mx-auto px-6 md:px-10 py-24 md:py-32">
+    <div class="font-mono text-xs tracking-[0.3em] uppercase text-[var(--hazard)] mb-4">02 — The Asset</div>
+    <h2 class="font-display uppercase text-4xl md:text-6xl leading-[0.95] mb-16 max-w-3xl">
+      Premium Avocados,<br>Specified Like Hardware.
+    </h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+      <!-- data table -->
+      <div class="lg:col-span-7">
+        <div class="border hairline font-mono text-sm">
+          <div class="stat-row grid grid-cols-2 px-6 py-5">
+            <span class="text-[var(--grey)] uppercase tracking-widest text-xs">Weight Class</span>
+            <span class="text-right text-[var(--acid)]">600 — 900 g</span>
+          </div>
+          <div class="stat-row grid grid-cols-2 px-6 py-5">
+            <span class="text-[var(--grey)] uppercase tracking-widest text-xs">Cultivar Profile</span>
+            <span class="text-right">High-oil, buttery / low-fiber</span>
+          </div>
+          <div class="stat-row grid grid-cols-2 px-6 py-5">
+            <span class="text-[var(--grey)] uppercase tracking-widest text-xs">Soil Optimization</span>
+            <span class="text-right">Bangladesh loam, monsoon-fed</span>
+          </div>
+          <div class="stat-row grid grid-cols-2 px-6 py-5">
+            <span class="text-[var(--grey)] uppercase tracking-widest text-xs">Yield Cycle</span>
+            <span class="text-right text-[var(--acid)]">4–5 years to maturity</span>
+          </div>
+          <div class="stat-row grid grid-cols-2 px-6 py-5">
+            <span class="text-[var(--grey)] uppercase tracking-widest text-xs">Harvest Window</span>
+            <span class="text-right">Seasonal / non-continuous</span>
+          </div>
+          <div class="stat-row grid grid-cols-2 px-6 py-5">
+            <span class="text-[var(--grey)] uppercase tracking-widest text-xs">Distribution Class</span>
+            <span class="text-right">Direct-to-consumer, D2C/B2B</span>
+          </div>
+          <div class="grid grid-cols-2 px-6 py-5 bg-[var(--hazard)]/10">
+            <span class="text-[var(--hazard)] uppercase tracking-widest text-xs font-bold">Allocation Status</span>
+            <span class="text-right text-[var(--hazard)] font-bold">Limited / Season-Capped</span>
+          </div>
+        </div>
+        <p class="font-mono text-xs text-[var(--grey)] mt-4 leading-relaxed">
+          Data reflects target cultivation parameters for the current planting cohort.
+          Actual yield varies by microclimate and season.
+        </p>
+      </div>
+
+      <!-- growth ring diagram -->
+      <div class="lg:col-span-5 flex flex-col items-center justify-center border hairline p-10">
+        <div class="relative w-full max-w-[280px]">
+          <div class="growth-ring">
+            <div class="ring-line" style="inset:0%"></div>
+            <div class="ring-line" style="inset:15%"></div>
+            <div class="ring-line" style="inset:30%"></div>
+            <div class="ring-line" style="inset:45%"></div>
+            <div class="ring-line" style="inset:60%; border-color:var(--hazard);"></div>
+            <div class="absolute inset-0 flex items-center justify-center flex-col text-center">
+              <span class="font-display text-3xl text-[var(--acid)]">Y4–5</span>
+              <span class="font-mono text-[10px] uppercase tracking-widest text-[var(--grey)] mt-1">Peak Yield</span>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-5 gap-2 w-full mt-8 font-mono text-[10px] text-[var(--grey)] uppercase text-center">
+          <span>Y1<br>Root</span>
+          <span>Y2<br>Growth</span>
+          <span>Y3<br>Flower</span>
+          <span>Y4<br>Fruit</span>
+          <span class="text-[var(--hazard)]">Y5<br>Peak</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section id="architecture" class="relative border-b hairline">
+  <div class="max-w-[1600px] mx-auto px-6 md:px-10 py-24 md:py-32">
+    <div class="font-mono text-xs tracking-[0.3em] uppercase text-[var(--hazard)] mb-4">03 — Architecture</div>
+    <h2 class="font-display uppercase text-4xl md:text-6xl leading-[0.95] mb-16 max-w-4xl">
+      Harvest to Buyer.<br>No Layer Between.
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#2a2824] border hairline">
+      <div class="bg-[var(--void)] p-8 md:p-10">
+        <div class="font-mono text-[var(--hazard)] text-sm mb-4">/infrastructure</div>
+        <h3 class="font-display uppercase text-xl mb-3">Zero Monthly Cost</h3>
+        <p class="text-sm text-[var(--paper)]/80 leading-relaxed">
+          Static edge delivery, serverless order capture, no recurring platform
+          rent. The margin stays with the soil, not a SaaS subscription.
+        </p>
+      </div>
+      <div class="bg-[var(--void)] p-8 md:p-10">
+        <div class="font-mono text-[var(--hazard)] text-sm mb-4">/pipeline</div>
+        <h3 class="font-display uppercase text-xl mb-3">Autonomous Routing</h3>
+        <p class="text-sm text-[var(--paper)]/80 leading-relaxed">
+          Order events trigger Make.com workflows that route allocation, update
+          inventory state, and notify logistics — without a human in the loop
+          until the crate ships.
+        </p>
+      </div>
+      <div class="bg-[var(--void)] p-8 md:p-10">
+        <div class="font-mono text-[var(--hazard)] text-sm mb-4">/distribution</div>
+        <h3 class="font-display uppercase text-xl mb-3">Direct Channel</h3>
+        <p class="text-sm text-[var(--paper)]/80 leading-relaxed">
+          B2B export lanes and D2C allocation share one backend. Same harvest,
+          two demand channels, no broker taking a cut in between.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-6 border hairline p-6 md:p-8 font-mono text-xs md:text-sm text-[var(--grey)] leading-relaxed">
+      <span class="text-[var(--acid)]">$</span> harvest.event → make.route(order) → edge.deliver(confirmation) → logistics.dispatch()
+      <br class="hidden md:block">
+      <span class="text-[var(--paper)]/60">No CMS. No middleman markup. No idle inventory sitting in a warehouse ledger.</span>
+    </div>
+  </div>
+</section>
+
+<!-- WAITLIST / TERMINAL -->
+<section id="waitlist" class="relative bg-[var(--soil)] border-b hairline">
+  <div class="max-w-[1600px] mx-auto px-6 md:px-10 py-24 md:py-32">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+      <div class="lg:col-span-5">
+        <div class="font-mono text-xs tracking-[0.3em] uppercase text-[var(--hazard)] mb-4">04 — Allocation</div>
+        <h2 class="font-display uppercase text-4xl md:text-5xl leading-[0.95] mb-6">
+          Reserve Before<br>The Season Closes.
+        </h2>
+        <p class="text-sm md:text-base text-[var(--paper)]/80 leading-relaxed mb-6">
+          Every season produces a fixed, non-negotiable yield. Once the season's
+          crates are allocated, the next opportunity is a full cycle away. There
+          is no restock button on a tree.
+        </p>
+        <div class="font-mono text-xs text-[var(--grey)] uppercase tracking-widest space-y-2">
+          <div class="flex justify-between border-b hairline pb-2"><span>Status</span><span class="text-[var(--hazard)]">Pre-Season / Open</span></div>
+          <div class="flex justify-between border-b hairline pb-2"><span>Allocation</span><span class="text-[var(--acid)]">Limited</span></div>
+          <div class="flex justify-between pb-2"><span>Channel</span><span>D2C + B2B Export</span></div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <form class="border-2 border-[var(--paper)] bg-[var(--void)]" onsubmit="return false;">
+          <div class="flex items-center gap-2 border-b hairline px-5 py-3">
+            <span class="w-2.5 h-2.5 rounded-full bg-[var(--hazard)]"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[var(--acid)]"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[var(--grey)]"></span>
+            <span class="font-mono text-xs text-[var(--grey)] ml-3 uppercase tracking-widest">agro_waitlist.terminal</span>
+          </div>
+
+          <div class="p-6 md:p-8 space-y-6 font-mono">
+            <div>
+              <label for="name" class="block text-xs uppercase tracking-widest text-[var(--acid)] mb-2">
+                <span class="text-[var(--grey)]">01&nbsp;</span>identity.name
+              </label>
+              <input id="name" name="name" type="text" required placeholder="Enter full name"
+                class="w-full bg-transparent border-b border-[#2a2824] focus:border-[var(--hazard)] outline-none py-2 text-sm text-[var(--paper)] placeholder-[var(--grey)]/60 transition-colors">
+            </div>
+
+            <div>
+              <label for="email" class="block text-xs uppercase tracking-widest text-[var(--acid)] mb-2">
+                <span class="text-[var(--grey)]">02&nbsp;</span>contact.email
+              </label>
+              <input id="email" name="email" type="email" required placeholder="you@domain.com"
+                class="w-full bg-transparent border-b border-[#2a2824] focus:border-[var(--hazard)] outline-none py-2 text-sm text-[var(--paper)] placeholder-[var(--grey)]/60 transition-colors">
+            </div>
+
+            <div>
+              <label for="channel" class="block text-xs uppercase tracking-widest text-[var(--acid)] mb-2">
+                <span class="text-[var(--grey)]">03&nbsp;</span>demand.channel
+              </label>
+              <select id="channel" name="channel"
+                class="w-full bg-transparent border-b border-[#2a2824] focus:border-[var(--hazard)] outline-none py-2 text-sm text-[var(--paper)] transition-colors">
+                <option class="bg-[var(--void)]" value="d2c">D2C — Direct Reserve</option>
+                <option class="bg-[var(--void)]" value="b2b">B2B — Bulk / Export</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="volume" class="block text-xs uppercase tracking-widest text-[var(--acid)] mb-2">
+                <span class="text-[var(--grey)]">04&nbsp;</span>volume.estimate
+              </label>
+              <input id="volume" name="volume" type="text" placeholder="e.g. 20 units / 5 crates / optional"
+                class="w-full bg-transparent border-b border-[#2a2824] focus:border-[var(--hazard)] outline-none py-2 text-sm text-[var(--paper)] placeholder-[var(--grey)]/60 transition-colors">
+            </div>
+
+            <button type="submit"
+              class="w-full bg-[var(--hazard)] text-[var(--void)] font-bold uppercase tracking-widest text-sm py-4 mt-2 hover:bg-[var(--acid)] transition-colors">
+              &gt; Submit Reservation Request
+            </button>
+            <p class="text-[10px] text-[var(--grey)] tracking-widest uppercase">
+              Submitting does not guarantee allocation. Confirmations issued in order received.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="relative">
+  <div class="max-w-[1600px] mx-auto px-6 md:px-10 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+    <div class="font-mono text-xs tracking-widest uppercase text-[var(--grey)]">
+      HANDS &amp; HEAD × AGRO — Fertile Soil, Autonomous Architecture.
+    </div>
+    <div class="font-mono text-xs tracking-widest uppercase text-[var(--grey)] flex gap-6">
+      <a href="#" class="hover:text-[var(--paper)] transition-colors">RAWx</a>
+      <a href="#" class="hover:text-[var(--paper)] transition-colors">Handfilm</a>
+      <a href="#" class="hover:text-[var(--paper)] transition-colors">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
